@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/e9be10f787.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href="style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link
+      rel="canonical"
+      href="https://splidejs.com/"
+      data-gatsby-head="true"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <title>School5.com</title>
+  </head>
+<body >
+    <!--Top bar-->
+    
+    <div class="flex justify-between  flex-row border border-b-1 border-gray-300 ">
+        <a class="items-start justify-start hover:text-blue-700 px-3 transition-colors cursor-pointer ease-out duration-700 m-2 font-medium" href="ЧУХАЛ ХОЛБООС.html">ЧУХАЛ ХОЛБООС</a>
+        <div class="text-blue-800  ">
+          <a href="#"><i class="fa-brands fa-twitter md:items-center  hover:text-yellow-400 cursor-pointer ease-out duration-700 transition-colors "></i>
+          </a>
+          <a href="#"><i class="fa-brands fa-facebook px-2 hover:text-yellow-400 cursor-pointer ease-out duration-700 transition-colors "></i>
+          </a>
+          <a href="#"><i class="fa-brands fa-youtube hover:text-yellow-400 cursor-pointer ease-out transition-colors duration-700 pr-4 pt-2"></i>
+          </a>
+        </div>
+    </div>
+    <!--Header-->
+    <header
+      class="navbar-items font-['Roboto_Condensed'] flex flex-row border-b border-blue-800"
+    >
+    
+      <div class="pt-2 pl-1 flex flex-auto pb-2">
+        <img class="h-14 w-64" src="img/logo/logo2.png" alt="" />
+      </div>
+      <script
+        src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+        defer
+      ></script>
+      <div
+        class="w-full text-blue-900 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800 pt-4"
+      >
+        <div
+          x-data="{ open: false }"
+          class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8"
+        >
+          <div class="p-4 flex flex-row items-center justify-between">
+            <a
+              href="#"
+              class="text-lg tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline"
+            ></a>
+            <button
+              class="md:hidden rounded-lg focus:outline-none focus:shadow-outline"
+              @click="open = !open"
+            >
+              <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                <path
+                  x-show="!open"
+                  fill-rule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                  clip-rule="evenodd"
+                ></path>
+                <path
+                  x-show="open"
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <nav
+            :class="{'flex': open, 'hidden': !open}"
+            class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row z-10"
+          >
+            <a
+              class="px-4 py-2 mt-2 text-sm font-bold text-blue-900  md:mt-0 "
+              href="index.html"
+              >НҮҮР</a
+            >
+            <div
+              @click.away="open = false"
+              class="relative"
+              x-data="{ open: false }"
+            >
+              <button
+                @click="open = !open"
+                class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm  text-left font-bold rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 "
+              >
+                <span>ТАНИЛЦУУЛГА</span>
+                <svg
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  :class="{'rotate-180': open, 'rotate-0': !open}"
+                  class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+              <div
+                x-show="open"
+                x-transition:enter="transition ease-out duration-100"
+                x-transition:enter-start="transform opacity-0 scale-95"
+                x-transition:enter-end="transform opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-75"
+                x-transition:leave-start="transform opacity-100 scale-100"
+                x-transition:leave-end="transform opacity-0 scale-95"
+                class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48"
+              >
+                <div
+                  class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800"
+                >
+                  <a
+                    class="block px-4 py-2 mt-2 text-sm  font-bold rounded-lg  md:mt-0 "
+                    href="ЗАХИРЛЫН МЭНДЧИЛГЭЭ.html"
+                    >ЗАХИРЛЫН МЭНДЧИЛГЭЭ</a
+                  >
+                  <a
+                    class="block px-4 py-2 mt-2 text-sm font-bold  rounded-lg  md:mt-0 "
+                    href="ТҮҮХЭН ЗАМНАЛ.html"
+                    >ТҮҮХЭН ЗАМНАЛ</a
+                  >
+                  <a
+                    class="block px-4 py-2 mt-2 text-sm  font-bold rounded-lg  md:mt-0 "
+                    href="ЗАХИРЛУУДЫН ТОВЧООН.html"
+                    >ЗАХИРЛУУДЫН ТОВЧООН</a
+                  >
+                  <a
+                    class="block px-4 py-2 mt-2 text-sm   rounded-lg  md:mt-0 "
+                    href="СУРГУУЛИЙН АМЖИЛТУУД.html"
+                    >СУРГУУЛИЙН АМЖИЛТУУД</a
+                  >
+                  <a
+                    class="block px-4 py-2 mt-2 text-sm   rounded-lg  md:mt-0 "
+                    href="СУРГУУЛИЙН СҮЛ ДУУ.html"
+                    >СУРГУУЛИЙН СҮЛД ДУУ</a
+                  >
+                  <a
+                    class="block px-4 py-2 mt-2 text-sm   rounded-lg  md:mt-0 "
+                    href="СУРАГЧДЫН БАРИМТЛАХ ТАВАН СОЁЛ.html"
+                    >СУРАГЧДЫН БАРИМТЛАХ СОЁЛ</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div
+              @click.away="open = false"
+              class="relative"
+              x-data="{ open: false }"
+            >
+              <button
+                @click="open = !open"
+                class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm  text-left font-bold rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 "
+              >
+                <span>СУРГАЛТ</span>
+                <svg
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  :class="{'rotate-180': open, 'rotate-0': !open}"
+                  class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+              <div
+                x-show="open"
+                x-transition:enter="transition ease-out duration-100"
+                x-transition:enter-start="transform opacity-0 scale-95"
+                x-transition:enter-end="transform opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-75"
+                x-transition:leave-start="transform opacity-100 scale-100"
+                x-transition:leave-end="transform opacity-0 scale-95"
+                class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48"
+              >
+                <div
+                  class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800"
+                >
+                  <a
+                    class="block px-4 py-2 mt-2 text-sm  font-bold rounded-lg  md:mt-0 "
+                    href="СУРГАЛТЫН ОНЦЛОГ.html"
+                    >СУРГАЛТЫН ОНЦЛОГ</a
+                  >
+                  <a
+                    class="block px-4 py-2 mt-2 text-sm  font-bold rounded-lg  md:mt-0 "
+                    href="ЦАХИМ СУРГАЛТ.html"
+                    >ЦАХИМ СУРГАЛТ</a
+                  >
+                  <a
+                    class="block px-4 py-2 mt-2 text-sm  font-bold rounded-lg  md:mt-0 "
+                    href="СЕКЦ ДУГУЙЛАН.html"
+                    >СЕКЦ ДУГУЙЛАН</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div
+              @click.away="open = false"
+              class="relative"
+              x-data="{ open: false }"
+            >
+              <button
+                @click="open = !open"
+                class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm  text-left font-bold rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 "
+              >
+                <span>ЭЛСЭЛТ ТӨГСӨЛТ</span>
+                <svg
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  :class="{'rotate-180': open, 'rotate-0': !open}"
+                  class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+              <div
+                x-show="open"
+                x-transition:enter="transition ease-out duration-100"
+                x-transition:enter-start="transform opacity-0 scale-95"
+                x-transition:enter-end="transform opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-75"
+                x-transition:leave-start="transform opacity-100 scale-100"
+                x-transition:leave-end="transform opacity-0 scale-95"
+                class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48"
+              >
+                <div
+                  class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800"
+                >
+                  <a
+                    class="block px-4 py-2 mt-2 text-sm  font-bold rounded-lg  md:mt-0 "
+                    href="ЭЛСЭЛТ.html"
+                    >ЭЛСЭЛТ</a
+                  >
+                  <a
+                    class="block px-4 py-2 mt-2 text-sm  font-bold rounded-lg  md:mt-0 "
+                    href="ТӨГСӨЛТ.html"
+                    >ТӨГСӨЛТ</a
+                  >
+                  <a
+                    class="block px-4 py-2 mt-2 text-sm  font-bold rounded-lg  md:mt-0 "
+                    href="БАХАРХАЛТ ТӨГСӨГЧИД.html"
+                    >БАХАРХАЛТ ТӨГСӨГЧИД</a
+                  >
+                  <a
+                    class="block px-4 py-2 mt-2 text-sm  font-bold rounded-lg  md:mt-0 "
+                    href="ТӨГСӨГЧДИЙН ДУРСАМЖ ЯРИА.html"
+                    >ТӨГСӨГЧДИЙН ДУРСАМЖ ЯРИА</a
+                  >
+                </div>
+              </div>
+            </div>
+            <a
+              class="px-4 py-2 mt-2 text-sm  font-bold rounded-lg  md:mt-0 md:ml-4 "
+              href="ГАДААД ХАРИЛЦАА.html"
+              >ГАДААД ХАРИЛЦАА</a
+            >
+            <a
+              class="px-4 py-2 mt-2 text-sm  font-bold rounded-lg  md:mt-0 md:ml-4 "
+              href="#"
+              >МЭДЭЭ МЭДЭЭЛЭЛ</a
+            >
+            <div
+              @click.away="open = false"
+              class="relative"
+              x-data="{ open: false }"
+            >
+              <button
+                @click="open = !open"
+                class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm  text-left font-bold rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 "
+              >
+                <span>БУСАД</span>
+                <svg
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  :class="{'rotate-180': open, 'rotate-0': !open}"
+                  class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+              <div
+                x-show="open"
+                x-transition:enter="transition ease-out duration-100"
+                x-transition:enter-start="transform opacity-0 scale-95"
+                x-transition:enter-end="transform opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-75"
+                x-transition:leave-start="transform opacity-100 scale-100"
+                x-transition:leave-end="transform opacity-0 scale-95"
+                class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48"
+              >
+                <div
+                  class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800"
+                >
+                  <a
+                    class="block px-4 py-2 mt-2 text-sm  font-bold rounded-lg  md:mt-0 "
+                    href="СУРАГЧИЙН ӨӨРӨӨ УДИРДАХ БАЙГУУЛЛАГА, КЛУБ.html"
+                    >СУРАГЧИЙН ӨӨРӨӨ УДИРДАХ БАЙГУУЛЛАГА, КЛУБ</a
+                  >
+                  <a
+                    class="block px-4 py-2 mt-2 text-sm  font-bold rounded-lg  md:mt-0 "
+                    href="ҮЙЛДВЭРЧНИЙ ЭВЛЭЛ.html"
+                    >ҮЙЛДВЭРЧНИЙ ЭВЛЭЛ</a
+                  >
+                  <a
+                    class="block px-4 py-2 mt-2 text-sm  font-bold rounded-lg  md:mt-0 "
+                    href="ЭЦЭГ ЭХИЙН ЗӨВЛӨЛ.html"
+                    >ЭЦЭГ ЭХИЙН ЗӨВЛӨЛ</a
+                  >
+                </div>
+              </div>
+              <a
+                class="px-4 py-2 mt-2 text-sm  font-bold rounded-lg  md:mt-0 md:ml-4 "
+                href=""
+                >ХОЛБОО БАРИХ</a
+              >
+            </div>
+            
+            <div class="flex flex-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                class="w-8 h-8 ml-2 px-2 py-2 rounded-lg "
+              >
+                <path
+                  d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
+                />
+              </svg>
+            </div>
+          </nav>
+        </div>
+      </div>
+      
+    </header>
+
+        <div class="flex flex-1 justify-end pr-9 pt-6">
+          <a href="#">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
+              />
+            </svg>
+          </a>
+        </div>
+      </nav>  
+      <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+        />
+        <link
+          href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+          rel="stylesheet"
+        />
+        <!--  Swiper's CSS -->
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/swiper/swiper-bundle.min.css"
+        />
+      </head>
+    
+      
+    <div class="text-center font-bold text-blue-900 my-9">  </div>
+    <head>
+      <meta charset="utf-8" />
+      <title></title>
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, minimums-scale=1, maximum-scale=1"
+      />
+      <link
+        href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+        rel="stylesheet"
+      />
+      <!--  Swiper's CSS -->
+      <link
+        rel="stylesheet"
+        href="https://unpkg.com/swiper/swiper-bundle.min.css"
+      />
+    </head>
+    </header>
+    <div class="text-center font-bold text-blue-900 mt-9">ЗАХИРЛЫН МЭНДЧИЛГЭЭ</div>
+    <div class="flex flex-row w-full h-auto">
+      <img src="img/gendensuren.jpg" alt="">
+  <p class="mx-auto ml-10 my-10">
+    Сайн байцгаана уу? Оюуныг мялааж, мэдлэгийг түгээсэн Үндэсний ууган, нэр хүндтэй 5 дугаар сургуулийн вэб хуудсанд зочилж байгаа эрхэм хүндэт багш, сурган хүмүүжүүлэгчид, ажилчид, нийт төгсөгчид, сурах хүслээр жигүүрлэсэн сурагчид, бяцхан шавь нар, эцэг эхчүүд, зочин та бүхэндээ энэ цаг мөчийн мэндийг хүргэе.
+ 
+    Өнөөдөр манай сургууль 3308 сурагч, 143 багш ажилтантай 82 дахь хичээлийн жилдээ сургалт, хүмүүжлийн үйл ажиллагаагаа тасралтгүй явуулж байна.
+     
+    2007 оноос Бүгд Найрамдах Турк улсын анхны ерөнхийлөгч Мустафа Кемаль Ататуркийн нэрэмжит сургууль болсноор Турк Улсын засгийн газар, Тика байгууллагын хөрөнгө оруулалт дэмжлэгээр сургуулийн гадна фасад, урлаг заал, спорт заал, гадаад хэлний кабинетын засвар зэрэг тохижилтын ажлууд, мөн мэдээлэл технологийн кабинет шинээр байгуулж, сурагчдын дунд турк хэлний дугуйлан хичээллэхэд багшлах боловсон хүчнээр хангаж өгсөнд манай сургуулийн хамт олон багш сурагчид, эцэг эхчүүд талархаж байдаг.
+    
+    Мөн 2017 оноос Оросын шинжлэх ухаан соёлын төв РЦНКА, Сөүлийн Хансон их сургууль, Ханол боловсролын төвүүдтэй хамтын ажиллагааны гэрээ байгуулан гадаад хамтын ажиллагаага өргөжүүлэн ажиллаж байна. 2019 онд сургуулийн 80 жилийн ойг тэмдэглэн өнгөрүүлэхэд хандив дэмжлэг туслалцаа үзүүлсэн нийт төгсөгчдөдөө талархаж байна. Багшлах боловсон хүчний чадавхи, тэдний мэргэжлийн урч чадвар өсөж амжилт бүтээл, туршлагаа бусдад түгээн дэлгэрүүлж байна.
+    
+    Элсэлтийн ерөнхий шалгалтын дундаж оноо, гадаад орны тэтгэлэгт тэнцэж байгаа сурагчдын тоо ч жилээс жилд нэмэгдэж байна.Сүүлийн жилүүдэд суралцагчдын эрүүл аюулгүй сурч боловсрох чиглэлээр хийсэн зарим ажлуудаас дурьдвал:
+    1. Зам тээврийн осолгүй сургууль төслийн хүрээнд сургуулийн урв төв зам дээр гэрлэн дохио, сургуулийн орчмын замын тэмдэг тэмдэглэгээ
+    2. Цайны газрын орчин нөхцөлийг сайжруулж ‘’Үдийн цай хөтөлбөр’’-ийн хэрэгжилтэд ахиц гарсан
+    3. Сургуулийн нийтийн эзэмшлийн болон гадна орчны камержуулалт зэрэг болно.
+    Сурагч багш нарын ажиллах таатай нөхцөл боломжийг бүрдүүлэх зорилгоор УИХ-ын гишүүнй Т.Аюурсайханы дэмжлэгтэйгээр 640 хүүхдийн хүчин чадалтай бага сургуулийн өргөтгөлийн барилга баригдаж байна.
+    
+    Техник технологийн шинэчлэлийг нэвтрүүлж суралцагчдын суралцах, судлах чадварыг нэмэгдүүлж байгаа нь 21-р зууны суралцагчийн бодит чадвар суухад томоохон түлхэц болно хэмээн итгэж байна. Энэ хүрээнд дэлхийн мэдээлэл технологийн дэвшил болсон Office-365 программыг туршин амжилттай хэрэгжүүлж Улч, Нийслэлийн хэмжээнд түүчээлэн ажиллаж байна.
+    
+    Сургууль вэб сайттай болсноор сургуулийн бодлого, төлөвлөлт, зорилго, зорилт, багш сурагчдын гаргаж байгаа амжилтаа та бүхэнд цаг алдалгүй хүргэх боломж бүрдэж байна. Та бүхний хамтын ажиллагааны дэмжлэг, эвсэг, чадварлаг, бүтээлч хамт олныхоо нөр их хүчин чармайлт, чин сэтгэл, хичээнгүй хөдөлмөрийн үр шимээр үүрэг, зорилгоо бүх талаар амжилттай биелүүлж, ухааны далайд нь гэрэл нэмж Монгол улсынхаа нэрийг дэлхийд таниулсан бүтээлч иргэдийг бэлтгэхэд хувь нэмрээ оруулж, ахиц, амжилтаа улам бататгасаар байх болно.
+   </p>
+  </div>
+  </body>
+</html>
+        
